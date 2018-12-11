@@ -17,6 +17,10 @@ public class SimpleHttpServer {
                 //Friendly message to the user as usual.
                 System.out.printf("Server initiated at Port #%d", port);
 
+                while(true){
+                    //Continue Listening
+                }
+
 
             } catch (IOException e) {
                 //Exception Handling required incase of IO exceptions in the ServerSocket.
@@ -25,7 +29,7 @@ public class SimpleHttpServer {
 
         }
         else {
-            System.out.println("Add ");
+            System.out.println("Please add port number in command line argument");
         }
 
 
