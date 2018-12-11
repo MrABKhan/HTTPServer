@@ -26,24 +26,24 @@ public class SimpleHttpServer {
                     //Continue Listening
 
                     //Listen and Accept a Connection, .accept() is a blocking method.
-                    final Socket socket = serverSocket.accept();
+                  final Socket socket = serverSocket.accept();
 
 
                     //Read Contents of the HTTP Request
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-                    String output = bufferedReader.readLine();
+                    String output;
 
                     //Print Contents till end of line
-                    while (!output.isEmpty()) {
+                    while (!(output = bufferedReader.readLine()).equals("")) {
                         System.out.println(output);
-                        System.out.println("IP Address:"+socket.getInetAddress());
-
-                        //Continue Reading
-                        output = bufferedReader.readLine();
 
                     }
 
+
+                    //Return the Response or else our program will be stuck in a loop
+                    String response = "HTTP/1.0 200 OK\n" + "Server: HTTP server/0.1\n"+ "Content-type: text/html; charset=UTF-8\n"+ "Content-Length: 38\n\n"+ "<html><body>OK</body></html>";
+                    socket.getOutputStream().write(response.getBytes());
 
                 }
 
