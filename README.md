@@ -1,7 +1,7 @@
 # HTTPServer
 #### Extremely Small Test Project.
 
-This is an example demonstration of Socket Programming at a basic level in Java. It receives requests at a Port and sends a simple OK response. 
+This is an example demonstration of Socket Programming at a basic level in Java. It receives requests at a Port and sends a simple OK response. Although this can be heavily modified and upgraded for more usage, I'm using this as a git motivation and habit building pilot project. :)
 
 
 # Build 
